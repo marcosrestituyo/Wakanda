@@ -1,0 +1,44 @@
+﻿
+
+@{
+
+    ViewBag.Title = "Index";
+}
+
+<h2>Productos</h2>
+
+@Html.ActionLink("Agregar Producto", "Insertar",new { }, new { Class = "btn btn-primary" })
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Precio</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var d in Model)
+        {
+            <tr>
+                <th scope="row">@d.ID</th>
+                <td>@d.Nombre</td>
+                <td>@d.Descripcion</td>
+                <td>@d.Precio</td>
+
+                <td>@Html.ActionLink("Editar", "Actualizar", new { id = d.ID }, new { Class = "btn btn-success" })</td>
+
+                <td>@Html.ActionLink("Eliminar", "Eliminar", new { id = d.ID }, new { Class = "btn btn-danger" })</td>
+            </tr>
+
+        }
+
+
+    </tbody>
+</table>
+
+
+

@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Eliminar";
+}
+
+<h2>Eliminar Producto</h2>
+
+<div><h3>Deseas eliminar este producto?</h3></div>
+
+
+<table class="table table-striped dark">
+    <tr>
+        <td scope="row">ID</td>
+        <td>@Model.ID</td>
+    </tr>
+    <tr>
+        <td scope="row">Nombre</td>
+        <td>@Model.Nombre</td>
+    </tr>
+    <tr>
+        <td scope="row">Descripción</td>
+        <td>@Model.Descripcion</td>
+    </tr>
+    <tr>
+        <td scope="row">Precio</td>
+        <td>@Model.Precio</td>
+    </tr>
+</table>
+
+<div>
+    <form action="Eliminar" method="">
+        <input type="text" name="id" value="@Model.ID" class=" form-control hidden"/>
+        <button class="btn btn-danger">Eliminar</button>
+    </form>
+</div>
+
+<div>
+    @Html.ActionLink("Volver", "Index");
+</div>
+
